@@ -1,37 +1,43 @@
-import { IconBrandFacebook, IconBrandGitlab, IconBrandTwitter } from '@tabler/icons';
-import clsx from 'clsx';
+import { Button } from './components/Button';
+import Card from './components/Card';
 
-export default function App() {
-    const type = 'submit';
-    const onClick = () => console.log('Login with another style..');
+const App = () => {
     return (
-        <div className={'bg-blue-900 grid place-content-center min-h-screen'}>
-            <dir className={'flex gap-x-2'}>
-                <Button {...{ type, onClick }}>
-                    <IconBrandFacebook />
-                    Login
-                </Button>
-                <Button className={'bg-sky-600'} onClick={() => alert('Login')} type='reset'>
-                    <IconBrandTwitter />
-                    Login
-                </Button>
-                <Button className={'bg-orange-600'} onClick={() => alert('Login')} type='button'>
-                    <IconBrandGitlab />
-                    Login
-                </Button>
-            </dir>
+        <div className={'bg-blue-100 antialiased flex items-center justify-center min-h-screen'}>
+            <div className={'max-w-4xl flex items-center gap-4 w-full'}>
+                <Card>
+                    <Card.Title>Hello world</Card.Title>
+                    <Card.Body>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo quis numquam suscipit aliquid rerum quaerat reiciendis veritatis
+                        asperiores. Veniam accusantium quos vero? Possimus facere quas ipsa esse harum sit quibusdam?
+                    </Card.Body>
+                    <Card.Footer>
+                        <Button>Register</Button>
+                    </Card.Footer>
+                </Card>
+                <Card>
+                    <Card.Title>Hello world</Card.Title>
+                    <Card.Body>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo quis numquam suscipit aliquid rerum quaerat reiciendis veritatis
+                        asperiores. Veniam accusantium quos vero? Possimus facere quas ipsa esse harum sit quibusdam?
+                    </Card.Body>
+                    <Card.Footer>
+                        <Button>Register</Button>
+                    </Card.Footer>
+                </Card>
+                <Card>
+                    <Card.Title>Hello world</Card.Title>
+                    <Card.Body>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo quis numquam suscipit aliquid rerum quaerat reiciendis veritatis
+                        asperiores. Veniam accusantium quos vero? Possimus facere quas ipsa esse harum sit quibusdam?
+                    </Card.Body>
+                    <Card.Footer>
+                        <Button>Register</Button>
+                    </Card.Footer>
+                </Card>
+            </div>
         </div>
     );
-}
+};
 
-function Button(props) {
-    const { className = 'bg-blue-600', children, text, type = 'submit' } = props;
-    return (
-        <button
-            {...props}
-            type={type}
-            className={clsx(className, '[&>svg]:w-5 [&>svg]:h-5 [&>svg]:stroke-1 flex items-center gap-x-2 text-white px-4 py-2 rounded')}>
-            {text || children}
-        </button>
-    );
-}
+export default App;
